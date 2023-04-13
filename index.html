@@ -1,0 +1,674 @@
+<!DOCTYPE html><html lang="en-US" style="--numChartData:1;"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content="images/app-thumbnail.png">
+<link rel="stylesheet" href="css/main-page-06f2a1c8d83543d025b1792f1d1d0c02.css">
+<link rel="preload" href="/js/chain-8e7381611f8b52ccd84f8b7794fc2ae0.js?vsn=d" as="script">
+<link rel="preload" href="/js/chart-loader-cf456b03ce811c97c20fb9ad40d7e1e9.js?vsn=d" as="script">
+<link rel="preload" href="/js/token-transfers-toggle-ed90c92bc5f27e81bb64def1db83bee4.js?vsn=d" as="script">
+<link rel="preload" href="/js/autocomplete-ab2c626846064969e2d3743d8a6f9e84.js?vsn=d" as="script">
+<link rel="preload" href="/images/icons/fontawesome/github-085f3d7cc061791dbc3091dd891324d0.svg?vsn=d" as="image" crossorigin>
+<link rel="preload" href="/images/icons/fontawesome/twitter-77c54a1c1b6059dd7d457930bc8d1671.svg?vsn=d" as="image" crossorigin>
+<link rel="preload" href="/images/icons/fontawesome/telegram-b3bc7d8aac69fc737afcd163f23c5dd3.svg?vsn=d" as="image" crossorigin>
+<link rel="preload" href="/images/icons/fontawesome/bar-chart-695c0e001e45371bc2aa623682ee28b4.svg?vsn=d" as="image" crossorigin>
+<link rel="preload" href="/images/icons/fontawesome/info-circle-cc526228a68f0cd74fa6c80b8924d54f.svg?vsn=d" as="image" crossorigin>
+<link rel="preload" href="/images/icons/fontawesome/tag-287add6175476b8324518840bd775fc4.svg?vsn=d" as="image" crossorigin>
+<link rel="preload" href="/css/non-critical-2ffacf324b7f57f1f5d245c92880af02.css?vsn=d" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="css/non-critical-2ffacf324b7f57f1f5d245c92880af02.css">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-585d0c9a02f4be994d20cd32ecf4e913.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32-0c6de26194243485905fc1db345dcf4e.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16-0c6de26194243485905fc1db345dcf4e.png">
+<link rel="manifest" href="/manifest-b9aa277fcfc34c31db6c7a7ea3469b8c.webmanifest?vsn=d">
+<link rel="mask-icon" href="fonts/safari-pinned-tab-adc3ba3be99be1d8d81f1aef8b248240.svg" color="#5bbad5">
+<link rel="shortcut icon" type="image/x-icon" href="images/logoss.png">
+<meta name="msapplication-TileColor" content="#7dd79f">
+<meta name="msapplication-config" content="/browserconfig-a493ba0aa0b8ec8068d786d7248bb92c.xml?vsn=d">
+<meta name="theme-color" content="#ffffff">
+<title>
+Avenetwork Tesnet Explorer
+</title>
+<meta name="description" content="BlockScout provides analytics data, API, and Smart Contract tools for the Testnet">
+<meta name="keywords" content="BlockScout, blockchain, api, analytics, address, smart contract">
+<script defer data-cfasync="false">
+      window.localized = {
+        'Blocks Indexed': 'Blocks Indexed',
+        'Block Processing': 'Block Mined, awaiting import...',
+        'Indexing Tokens': 'Indexing Tokens',
+        'Less than': 'Less than',
+        'Market Cap': 'Market Cap',
+        'Price': 'Price',
+        'Ether': 'AVW',
+        'Tx/day': 'Tx/day'
+      }
+    </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LSPEHRRX3B"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LSPEHRRX3B');
+    </script>
+</head>
+<body>
+<div class="layout-container">
+<nav class="navbar navbar-white navbar-expand-lg navbar-primary" data-selector="navbar" id="top-navbar">
+<div class="container-fluid navbar-container container">
+<a class="navbar-brand" data-test="header_logo" href="/">
+<img class="navbar-logo" id="navbar-logo" src="images/avenet.png" alt="Tesnet">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+<div class="search-form d-lg-flex d-inline-block mobile-search-hide top-nav-search">
+<div class="input-group" style="width: 100%;" title="Search by address, token symbol name, transaction hash, or block number">
+<div class="form-control search-control me auto mobile-search-hide top-nav-search">
+<input id="main-search-autocomplete" class="main-search-autocomplete" data-test="search_input" data-chain-id="1975" data-display-token-icons="false" type="text" tabindex="1" placeholder="Search by address, token symbol name, transaction hash, or block number">
+</div>
+<div class="input-group-append">
+<button class="input-group-text search-button" id="search-icon">
+<svg viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg" width="16" height="17">
+<path fill="" fill-rule="evenodd" d="M15.713 15.727a.982.982 0 0 1-1.388 0l-2.289-2.29C10.773 14.403 9.213 15 7.5 15A7.5 7.5 0 1 1 15 7.5c0 1.719-.602 3.284-1.575 4.55l2.288 2.288a.983.983 0 0 1 0 1.389zM7.5 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 1 0 0-11z"/>
+</svg>
+</button>
+</div>
+</div>
+<button class="btn btn-outline-success my-2 my-sm-0 sr-only hidden" type="submit">Search</button>
+</div>
+<ul class="navbar-nav pr-3">
+<li class="nav-item dropdown">
+<a class="nav-link topnav-nav-link dropdown-toggle px-2" href="#" id="navbarBlocksDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span class="nav-link-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.3046 7.12987C20.6831 6.96164 20.8536 6.51842 20.6854 6.1399C20.5171 5.76139 20.0739 5.59092 19.6954 5.75915L20.3046 7.12987ZM4.3046 5.75915C3.92609 5.59092 3.48287 5.76139 3.31464 6.1399C3.14641 6.51842 3.31688 6.96164 3.6954 7.12987L4.3046 5.75915ZM13.6246 2.72207L13.32 3.40743L13.6246 2.72207ZM18.6246 4.94429L18.9292 4.25894L18.6246 4.94429ZM5.37545 4.94429L5.07084 4.25894L5.37545 4.94429ZM10.3754 2.72207L10.0708 2.03671L10.0708 2.03671L10.3754 2.72207ZM18.6246 19.0558L18.9292 19.7412H18.9292L18.6246 19.0558ZM13.6246 21.278L13.9292 21.9634L13.6246 21.278ZM10.3754 21.278L10.6801 20.5927H10.68L10.3754 21.278ZM5.37545 19.0558L5.07084 19.7412H5.07084L5.37545 19.0558ZM11.25 21C11.25 21.4143 11.5858 21.75 12 21.75C12.4142 21.75 12.75 21.4143 12.75 21H11.25ZM19.6954 5.75915L11.6954 9.3147L12.3046 10.6854L20.3046 7.12987L19.6954 5.75915ZM12.3046 9.3147L4.3046 5.75915L3.6954 7.12987L11.6954 10.6854L12.3046 9.3147ZM13.32 3.40743L18.3199 5.62965L18.9292 4.25894L13.9292 2.03671L13.32 3.40743ZM5.68005 5.62965L10.68 3.40743L10.0708 2.03671L5.07084 4.25894L5.68005 5.62965ZM18.32 18.3704L13.32 20.5927L13.9292 21.9634L18.9292 19.7412L18.32 18.3704ZM10.68 20.5927L5.68005 18.3704L5.07084 19.7412L10.0708 21.9634L10.68 20.5927ZM21.75 15.4006V8.59954H20.25V15.4006H21.75ZM3.75 15.4006V8.59954H2.25V15.4006H3.75ZM5.68005 18.3704C4.50639 17.8488 3.75 16.6849 3.75 15.4006H2.25C2.25 17.2777 3.35549 18.9788 5.07084 19.7412L5.68005 18.3704ZM13.32 20.5927C12.4796 20.9661 11.5204 20.9662 10.6801 20.5927L10.0708 21.9634C11.299 22.5092 12.701 22.5092 13.9292 21.9634L13.32 20.5927ZM18.9292 19.7412C20.6445 18.9788 21.75 17.2777 21.75 15.4006H20.25C20.25 16.6849 19.4936 17.8488 18.3199 18.3704L18.9292 19.7412ZM5.07084 4.25894C3.35548 5.02132 2.25 6.72239 2.25 8.59954H3.75C3.75 7.31518 4.50638 6.15128 5.68005 5.62965L5.07084 4.25894ZM18.3199 5.62965C19.4936 6.15128 20.25 7.31518 20.25 8.59954H21.75C21.75 6.72239 20.6445 5.02132 18.9292 4.25894L18.3199 5.62965ZM13.9292 2.03671C12.701 1.49085 11.299 1.49085 10.0708 2.03671L10.68 3.40743C11.5204 3.03395 12.4796 3.03395 13.32 3.40743L13.9292 2.03671ZM11.25 10.0001V21H12.75V10.0001H11.25Z" fill="white"/>
+</svg>
+</span>
+Blocks
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarBlocksDropdown">
+<a class="dropdown-item " href="/blocks">
+Blocks
+</a>
+<a class="dropdown-item " href="/uncles">
+Uncles
+</a>
+<a class="dropdown-item " href="/reorgs">
+Forked Blocks (Reorgs)
+</a>
+</div>
+</li>
+<li class="nav-item dropdown" id="activeTransactions">
+<a href="#" role="button" id="navbarTransactionsDropdown" class="nav-link topnav-nav-link dropdown-toggle px-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span class="nav-link-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 7.75C17.4142 7.75 17.75 7.41421 17.75 7C17.75 6.58579 17.4142 6.25 17 6.25V7.75ZM7 6.25C6.58579 6.25 6.25 6.58579 6.25 7C6.25 7.41421 6.58579 7.75 7 7.75V6.25ZM17 11.75C17.4142 11.75 17.75 11.4142 17.75 11C17.75 10.5858 17.4142 10.25 17 10.25V11.75ZM7 10.25C6.58579 10.25 6.25 10.5858 6.25 11C6.25 11.4142 6.58579 11.75 7 11.75V10.25ZM12 15.75C12.4142 15.75 12.75 15.4142 12.75 15C12.75 14.5858 12.4142 14.25 12 14.25V15.75ZM7 14.25C6.58579 14.25 6.25 14.5858 6.25 15C6.25 15.4142 6.58579 15.75 7 15.75V14.25ZM18.3226 21.0361L18.0685 21.7418L18.3226 21.0361ZM16.7608 20.4739L17.0148 19.7682H17.0148L16.7608 20.4739ZM15.2626 20.5318L14.9549 19.8479H14.9549L15.2626 20.5318ZM12.8207 21.6307L12.513 20.9467H12.513L12.8207 21.6307ZM11.1793 21.6307L11.487 20.9467H11.487L11.1793 21.6307ZM8.73737 20.5318L9.04515 19.8479H9.04515L8.73737 20.5318ZM7.2392 20.4739L6.98517 19.7682H6.98516L7.2392 20.4739ZM5.67744 21.0361L5.93148 21.7418H5.93148L5.67744 21.0361ZM17 6.25L7 6.25V7.75L17 7.75V6.25ZM17 10.25L7 10.25V11.75L17 11.75V10.25ZM12 14.25H7V15.75H12V14.25ZM5 2.75H19V1.25H5V2.75ZM20.25 4V19.1543H21.75V4H20.25ZM18.5766 20.3305L17.0148 19.7682L16.5068 21.1796L18.0685 21.7418L18.5766 20.3305ZM14.9549 19.8479L12.513 20.9467L13.1285 22.3146L15.5704 21.2158L14.9549 19.8479ZM11.487 20.9467L9.04515 19.8479L8.4296 21.2158L10.8715 22.3146L11.487 20.9467ZM6.98516 19.7682L5.4234 20.3305L5.93148 21.7418L7.49324 21.1796L6.98516 19.7682ZM3.75 19.1543V4H2.25V19.1543H3.75ZM5.4234 20.3305C4.60882 20.6237 3.75 20.0201 3.75 19.1543H2.25C2.25 21.059 4.13941 22.3869 5.93148 21.7418L5.4234 20.3305ZM9.04515 19.8479C8.39479 19.5552 7.65618 19.5267 6.98517 19.7682L7.49324 21.1796C7.79825 21.0697 8.13399 21.0827 8.4296 21.2158L9.04515 19.8479ZM12.513 20.9467C12.1867 21.0935 11.8133 21.0935 11.487 20.9467L10.8715 22.3146C11.5892 22.6376 12.4108 22.6376 13.1285 22.3146L12.513 20.9467ZM17.0148 19.7682C16.3438 19.5267 15.6052 19.5552 14.9549 19.8479L15.5704 21.2158C15.866 21.0827 16.2017 21.0697 16.5068 21.1796L17.0148 19.7682ZM20.25 19.1543C20.25 20.0201 19.3912 20.6237 18.5766 20.3305L18.0685 21.7418C19.8606 22.3869 21.75 21.059 21.75 19.1543H20.25ZM19 2.75C19.6904 2.75 20.25 3.30964 20.25 4H21.75C21.75 2.48122 20.5188 1.25 19 1.25V2.75ZM5 1.25C3.48122 1.25 2.25 2.48122 2.25 4H3.75C3.75 3.30964 4.30964 2.75 5 2.75V1.25Z" fill="white"/>
+</svg>
+</span>
+Transactions
+</a>
+<div class="dropdown-menu" aria-labeledby="navbarTransactionsDropdown">
+<a class="dropdown-item " href="#">Validated</a>
+<a class="dropdown-item " data-test="pending_transactions_link" href="#">Pending</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a href="#" role="button" id="navbarTokensDropdown" class="nav-link topnav-nav-link dropdown-toggle px-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span class="nav-link-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18 4C19.1046 4 20 4.89543 20 6C20 7.10457 19.1046 8 18 8L10 8C8.89543 8 8 7.10457 8 6C8 4.89543 8.89543 4 10 4L18 4Z M18 12C19.1046 12 20 12.8954 20 14C20 15.1046 19.1046 16 18 16H10C8.89543 16 8 15.1046 8 14C8 12.8954 8.89543 12 10 12L18 12Z M14 8C15.1046 8 16 8.89543 16 10C16 11.1046 15.1046 12 14 12L6 12C4.89543 12 4 11.1046 4 10C4 8.89543 4.89543 8 6 8L14 8Z M15 16C16.1046 16 17 16.8954 17 18C17 19.1046 16.1046 20 15 20L7 20C5.89543 20 5 19.1046 5 18C5 16.8954 5.89543 16 7 16L15 16Z" fill="white" stroke-width="0.5"/>
+</svg>
+</span>
+Tokens
+</a>
+<div class="dropdown-menu" aria-labeledby="navbarTransactionsDropdown">
+<a class="dropdown-item " href="#">All</a>
+<a class="dropdown-item " href="#">AVW</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a href="#" role="button" id="navbarAPIsDropdown" class="nav-link topnav-nav-link dropdown-toggle px-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span class="nav-link-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.75 19C12.75 18.5858 12.4142 18.25 12 18.25C11.5858 18.25 11.25 18.5858 11.25 19H12.75ZM9 21.25C8.58579 21.25 8.25 21.5858 8.25 22C8.25 22.4142 8.58579 22.75 9 22.75V21.25ZM15 22.75C15.4142 22.75 15.75 22.4142 15.75 22C15.75 21.5858 15.4142 21.25 15 21.25V22.75ZM7 6.25C6.58579 6.25 6.25 6.58579 6.25 7C6.25 7.41421 6.58579 7.75 7 7.75V6.25ZM12 7.75C12.4142 7.75 12.75 7.41421 12.75 7C12.75 6.58579 12.4142 6.25 12 6.25V7.75ZM7 10.25C6.58579 10.25 6.25 10.5858 6.25 11C6.25 11.4142 6.58579 11.75 7 11.75V10.25ZM17 11.75C17.4142 11.75 17.75 11.4142 17.75 11C17.75 10.5858 17.4142 10.25 17 10.25V11.75ZM6 2.75H18V1.25H6V2.75ZM21.25 6V15H22.75V6H21.25ZM18 18.25H6V19.75H18V18.25ZM2.75 15V6H1.25V15H2.75ZM6 18.25C4.20507 18.25 2.75 16.7949 2.75 15H1.25C1.25 17.6234 3.37665 19.75 6 19.75V18.25ZM21.25 15C21.25 16.7949 19.7949 18.25 18 18.25V19.75C20.6234 19.75 22.75 17.6234 22.75 15H21.25ZM18 2.75C19.7949 2.75 21.25 4.20507 21.25 6H22.75C22.75 3.37665 20.6234 1.25 18 1.25V2.75ZM6 1.25C3.37665 1.25 1.25 3.37665 1.25 6H2.75C2.75 4.20507 4.20507 2.75 6 2.75V1.25ZM11.25 19V22H12.75V19H11.25ZM12 21.25H9V22.75H12V21.25ZM12 22.75H15V21.25H12V22.75ZM7 7.75H12V6.25H7V7.75ZM7 11.75H17V10.25H7V11.75ZM2 15.75H22V14.25H2V15.75Z" fill="#F0F0F0"/>
+</svg>
+</span>
+APIs
+</a>
+<div class="dropdown-menu" aria-labeledby="navbarTransactionsDropdown">
+<a class="dropdown-item " href="#">GraphQL</a>
+<a class="dropdown-item " href="#">RPC</a>
+<a class="dropdown-item " href="#">AVW RPC</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a href="#" role="button" id="navbarAppsDropdown" class="nav-link topnav-nav-link dropdown-toggle px-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span class="nav-link-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.78885 7.89444L3.45344 8.56526H3.45344L3.78885 7.89444ZM11.1056 11.5528L11.441 10.882L11.1056 11.5528ZM20.2111 7.89444L20.5466 8.56526L20.2111 7.89444ZM20.2111 6.10559L20.5466 5.43477V5.43477L20.2111 6.10559ZM12.8944 2.44723L12.559 3.11805L12.8944 2.44723ZM11.1056 2.44723L10.7702 1.77641V1.77641L11.1056 2.44723ZM3.78886 6.10559L3.45345 5.43477L3.45345 5.43477L3.78886 6.10559ZM12.8123 21.639L12.5077 20.9536L12.8123 21.639ZM21.3046 18.6854C21.6831 18.5171 21.8536 18.0739 21.6854 17.6954C21.5171 17.3169 21.0739 17.1464 20.6954 17.3147L21.3046 18.6854ZM3.3046 17.3147C2.92609 17.1464 2.48287 17.3169 2.31464 17.6954C2.14641 18.0739 2.31688 18.5171 2.6954 18.6854L3.3046 17.3147ZM11.1877 21.639L11.4923 20.9536L11.1877 21.639ZM12.8123 16.639L12.5077 15.9536L12.8123 16.639ZM21.3046 13.6854C21.6831 13.5171 21.8536 13.0739 21.6854 12.6954C21.5171 12.3169 21.0739 12.1464 20.6954 12.3147L21.3046 13.6854ZM3.3046 12.3147C2.92609 12.1464 2.48287 12.3169 2.31464 12.6954C2.14641 13.0739 2.31688 13.5171 2.6954 13.6854L3.3046 12.3147ZM11.1877 16.639L11.4923 15.9536L11.1877 16.639ZM3.45344 8.56526L10.7702 12.2236L11.441 10.882L4.12426 7.22362L3.45344 8.56526ZM13.2298 12.2236L20.5466 8.56526L19.8757 7.22362L12.559 10.882L13.2298 12.2236ZM20.5466 5.43477L13.2298 1.77641L12.559 3.11805L19.8757 6.77641L20.5466 5.43477ZM10.7702 1.77641L3.45345 5.43477L4.12427 6.77641L11.441 3.11805L10.7702 1.77641ZM13.2298 1.77641C12.4556 1.38931 11.5444 1.38931 10.7702 1.77641L11.441 3.11805C11.7929 2.9421 12.2071 2.9421 12.559 3.11805L13.2298 1.77641ZM20.5466 8.56526C21.8364 7.92035 21.8364 6.07969 20.5466 5.43477L19.8757 6.77641C20.06 6.86854 20.06 7.13149 19.8757 7.22362L20.5466 8.56526ZM10.7702 12.2236C11.5444 12.6107 12.4556 12.6107 13.2298 12.2236L12.559 10.882C12.2071 11.0579 11.7929 11.0579 11.441 10.882L10.7702 12.2236ZM4.12426 7.22362C3.94001 7.13149 3.94 6.86854 4.12427 6.77641L3.45345 5.43477C2.16361 6.07968 2.16361 7.92034 3.45344 8.56526L4.12426 7.22362ZM13.1169 22.3244L21.3046 18.6854L20.6954 17.3147L12.5077 20.9536L13.1169 22.3244ZM2.6954 18.6854L10.8831 22.3244L11.4923 20.9536L3.3046 17.3147L2.6954 18.6854ZM12.5077 20.9536C12.1845 21.0973 11.8155 21.0973 11.4923 20.9536L10.8831 22.3244C11.5942 22.6404 12.4058 22.6404 13.1169 22.3244L12.5077 20.9536ZM13.1169 17.3244L21.3046 13.6854L20.6954 12.3147L12.5077 15.9536L13.1169 17.3244ZM2.6954 13.6854L10.8831 17.3244L11.4923 15.9536L3.3046 12.3147L2.6954 13.6854ZM12.5077 15.9536C12.1845 16.0973 11.8155 16.0973 11.4923 15.9536L10.8831 17.3244C11.5942 17.6404 12.4058 17.6404 13.1169 17.3244L12.5077 15.9536Z" fill="#8492A7"/>
+</svg>
+</span>
+Apps
+</a>
+<div class="dropdown-menu" aria-labeledby="navbarAppsDropdown">
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link topnav-nav-link active-icon " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<span class="nav-link-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" class="active-dot-icon">
+<circle cx="3" cy="3" r="3" fill="#80d6a1"/>
+</svg>
+</span>
+Testnet
+</a>
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+<a class="dropdown-item header division">Testnet</a>
+<a class="dropdown-item header division">Testnets Alpha</a>
+<a class="dropdown-item header division">Other Networks</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="search-form d-lg-flex d-inline-block mobile-search-show container pt-1">
+<div class="input-group" style="width: 100%;" title="Search by address, token symbol name, transaction hash, or block number">
+<div class="form-control search-control me auto mobile-search-show container pt-1">
+<input id="main-search-autocomplete-mobile" class="main-search-autocomplete" data-test="search_input" data-chain-id="1975" data-display-token-icons="false" type="text" tabindex="1" placeholder="Search by address, token symbol name, transaction hash, or block number">
+</div>
+<div class="input-group-append">
+<button class="input-group-text search-button" id="search-icon">
+<svg viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg" width="16" height="17">
+<path fill="" fill-rule="evenodd" d="M15.713 15.727a.982.982 0 0 1-1.388 0l-2.289-2.29C10.773 14.403 9.213 15 7.5 15A7.5 7.5 0 1 1 15 7.5c0 1.719-.602 3.284-1.575 4.55l2.288 2.288a.983.983 0 0 1 0 1.389zM7.5 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 1 0 0-11z"/>
+</svg>
+</button>
+</div>
+</div>
+<button class="btn btn-outline-success my-2 my-sm-0 sr-only hidden" type="submit">Search</button>
+</div>
+</nav>
+<main class="js-ad-dependant-pt pt-5">
+<p class="alert alert-info" role="alert"></p>
+<p class="alert alert-danger" role="alert"></p>
+<div class="dashboard-banner-container" data-page="chain-details">
+<div class="container">
+<div class="dashboard-banner">
+
+<div class="dashboard-banner-network-plain-container">
+
+<div class="search-form d-lg-flex d-inline-block mobile-search-hide">
+<div class="input-group" style="width: 100%;" title="Search by address, token symbol name, transaction hash, or block number">
+<div class="form-control search-control me auto mobile-search-hide">
+<input id="main-search-autocomplete" class="main-search-autocomplete" data-test="search_input" data-chain-id="1975" data-display-token-icons="false" type="text" tabindex="1" placeholder="Search by address, token symbol name, transaction hash, or block number">
+</div>
+<div class="input-group-append">
+<button class="input-group-text search-button" id="search-icon">
+<svg viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg" width="16" height="17">
+<path fill="" fill-rule="evenodd" d="M15.713 15.727a.982.982 0 0 1-1.388 0l-2.289-2.29C10.773 14.403 9.213 15 7.5 15A7.5 7.5 0 1 1 15 7.5c0 1.719-.602 3.284-1.575 4.55l2.288 2.288a.983.983 0 0 1 0 1.389zM7.5 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 1 0 0-11z"/>
+</svg>
+</button>
+</div>
+</div>
+<button class="btn btn-outline-success my-2 my-sm-0 sr-only hidden" type="submit">Search</button>
+</div>
+<div class="dashboard-banner-network-stats">
+<div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-1">
+<span class="dashboard-banner-network-stats-label">
+Average block time
+</span>
+<span class="dashboard-banner-network-stats-value" data-selector="average-block-time">
+3 seconds
+</span>
+</div>
+<div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-2">
+<span class="dashboard-banner-network-stats-label">
+Total transactions
+</span>
+<div class="d-flex">
+<span class="dashboard-banner-network-stats-value" data-selector="transaction-count">
+679
+</span>
+</div>
+</div>
+<div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-3">
+<span class="dashboard-banner-network-stats-label">
+Total blocks
+</span>
+<span class="dashboard-banner-network-stats-value" data-selector="block-count">
+1228
+</span>
+</div>
+<div class="dashboard-banner-network-stats-item dashboard-banner-network-stats-item-4">
+<span class="dashboard-banner-network-stats-label">
+Wallet addresses
+</span>
+<span class="dashboard-banner-network-stats-value" data-selector="address-count">
+767
+</span>
+</div>
+</div>
+</div>
+
+<div class="dashboard-banner-network-graph">
+
+<div class="dashboard-banner-chart">
+<button data-chart-error-message class="alert alert-danger col-12 text-left mt-5" style="display: none;">
+<span>There was a problem loading the chart.</span>
+</button>
+<canvas data-chart="historyChart" data-history_chart_paths="{
+                        " market":" market-history-chart" , "transaction":" transaction-history-chart" }" data-history_chart_config="{" transactions":["transactions_per_day"]}" width="350" height="152">
+</canvas>
+</div>
+
+<script>
+         numChartData = 1
+         document.documentElement.style.setProperty("--numChartData", numChartData);
+        </script>
+<div class="dashboard-banner-chart-legend">
+<div class="dashboard-banner-chart-legend-item">
+<span class="dashboard-banner-chart-legend-label">
+Tx/day
+</span>
+<span class="dashboard-banner-chart-legend-value" data-selector="tx_per_day">
+49,824
+<span data-toggle="tooltip" data-placement="top" data-html="true" data-template="<div class='tooltip tooltip-inversed-color tooltip-gas-usage' role='tooltip'><div class='arrow'></div><div class='tooltip-inner'></div></div>" title="<div class='custom-tooltip-header'>Gas used</div><div class='custom-tooltip-description'><b>2,700,490,722<b></div>">
+<i style="color: #ffffff;" class="fa fa-info-circle ml-1"></i>
+</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="container dashboard-container">
+<div class="card card-chain-blocks js-ad-dependant-mb-3">
+<div class="card-body">
+<div class="card-heading">
+<h2 class>Blocks</h2>
+</div>
+<div class="chain-item-list" data-selector="chain-block-list" data-url="/chain-blocks">
+<button data-selector="error-message" class="alert alert-danger col-12 text-left" style="display: none;">
+<span class="alert-link">
+Something went wrong, click to reload.
+</span>
+</button>
+<div hidden data-selector="loading-message" class="chain-item">
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+</div>
+<div hidden data-selector="loading-message" class="chain-item">
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+</div>
+<div hidden data-selector="loading-message" class="chain-item">
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+</div>
+<div hidden data-selector="loading-message" class="chain-item">
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+</div>
+<div hidden data-selector="loading-message" class="chain-item">
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+</div>
+<div hidden data-selector="loading-message" class="chain-item">
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+<div class="chain-item-col">
+<span class="tile-loader tile-label-loader"></span>
+<span class="tile-loader tile-label-loader"></span>
+</div>
+</div>
+</div>
+<div class="row align-items-center justify-content-center mt-4">
+<a class="text-dark" href="#">View All Blocks</a>
+</div>
+</div>
+</div>
+
+<script async src="js/display.js"></script>
+<div class="ad-container mb-2" style="display: none;">
+<div class="coinzilla" data-zone="C-26660bf627543e46851"></div>
+</div>
+<script defer data-cfasync="false" src="js/banner-74e84e2a5a67225d571625817c3a0f02.js"></script>
+
+<footer class="footer">
+<div class="container footer-container">
+<div class="brand">
+<a class="footer-brand" href="/">
+<img class="footer-logo" src="images/logoss.png" alt="Testnet">
+</a>
+<span>A mass adoption blockchain for DeFi and web 3.0</span>
+</div>
+<div class="links-col">
+<div class="footer-col">
+<b>Avenetwork</b>
+<a href="http://avenetworks.com/road.html" target="_blank">Roadmap</a>
+</div>
+<div class="footer-col">
+<b>Developers</b>
+<a href="#" target="_blank">Status</a>
+<a href="#" target="_blank">Docs</a>
+</div>
+<div class="footer-col">
+<b>Product</b>
+<a href="#" target="_blank">Zibranium Wallet</a>
+<a href="#" target="_blank">Ecosystem</a>
+</div>
+<div class="footer-col">
+<b>About us</b>
+<a href="#" target="_blank">Team</a>
+</div>
+</div>
+</div>
+<div class="container sub-footer">
+<span class="copyright">© 2023 Avenetwork. All rights reserved</span>
+<div class="social-list">
+<a href="#" target="_blank">
+<svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0.5" width="40" height="40" fill="#8492A7"/>
+<path d="M20 40.5C31.0457 40.5 40 31.5457 40 20.5C40 9.45431 31.0457 0.5 20 0.5C8.95431 0.5 0 9.45431 0 20.5C0 31.5457 8.95431 40.5 20 40.5Z" fill="#8492A7"/>
+<path d="M16.3351 29.6644C15.6871 29.6644 15.7973 29.4197 15.5738 28.8027L13.6685 22.5322L28.3351 13.8311" fill="white" fill-opacity="0.5"/>
+<path d="M16.3318 29.6682C16.8318 29.6682 17.0526 29.4395 17.3318 29.1682L19.9985 26.5752L16.6721 24.5693" fill="#8492A7"/>
+<path d="M16.6753 24.5623L24.7353 30.5171C25.6551 31.0246 26.3188 30.7618 26.5479 29.6633L29.8288 14.2028C30.1646 12.8561 29.3154 12.2451 28.4354 12.6446L9.17042 20.0731C7.85542 20.6006 7.86325 21.3343 8.93075 21.6611L13.8746 23.2043L25.3201 15.9834C25.8604 15.6558 26.3564 15.8318 25.9494 16.1931" fill="white"/>
+</svg>
+</a>
+<a href="#" target="_blank">
+<svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0.5" width="40" height="40" fill="#8492A7"/>
+<path d="M20 40.5C31.0457 40.5 40 31.5457 40 20.5C40 9.4543 31.0457 0.5 20 0.5C8.9543 0.5 0 9.4543 0 20.5C0 31.5457 8.9543 40.5 20 40.5Z" fill="#8492A7"/>
+<path d="M16.1067 26.4994V40.5H22.3888V26.4994H27.0725L27.9641 20.708H22.3888V16.9475C22.3888 15.3634 23.1678 13.8188 25.6645 13.8188H28.2V8.89099C28.2 8.89099 25.8995 8.5 23.6996 8.5C19.1059 8.5 16.1067 11.2733 16.1067 16.294V20.708H11V26.4994H16.1067Z" fill="white"/>
+</svg>
+</a>
+<a href="#" target="_blank">
+<svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0.5" width="40" height="40" fill="#8492A7"/>
+<path d="M20 40.5C31.0457 40.5 40 31.5457 40 20.5C40 9.4543 31.0457 0.5 20 0.5C8.9543 0.5 0 9.4543 0 20.5C0 31.5457 8.9543 40.5 20 40.5Z" fill="#8492A7"/>
+<path d="M30 14.0919C29.2644 14.4183 28.4742 14.639 27.6435 14.7382C28.4913 14.2305 29.1409 13.426 29.4475 12.4684C28.6421 12.9468 27.7607 13.2835 26.8415 13.4641C26.0935 12.6668 25.0268 12.1689 23.8467 12.1689C21.5815 12.1689 19.7445 14.0053 19.7445 16.2718C19.7445 16.5929 19.7806 16.9062 19.8502 17.207C16.4403 17.0356 13.4172 15.4022 11.3936 12.9203C11.0403 13.5265 10.8381 14.2312 10.8381 14.9832C10.8381 16.4064 11.5625 17.6622 12.6632 18.3978C12.0116 18.3776 11.3743 18.2017 10.8045 17.8848V17.9366C10.8045 19.9247 12.2186 21.5824 14.0956 21.9594C13.7508 22.0539 13.3889 22.1032 13.0146 22.1032C12.7499 22.1032 12.4931 22.0782 12.2422 22.031C12.7644 23.6605 14.2796 24.8466 16.0744 24.8801C14.6703 25.9808 12.9009 26.637 10.9792 26.637C10.6483 26.637 10.3211 26.6172 10 26.5785C11.816 27.7429 13.9722 28.4227 16.2892 28.4227C23.8355 28.4227 27.9627 22.1709 27.9627 16.7493C27.9627 16.5713 27.9587 16.3946 27.9502 16.2186C28.7542 15.637 29.4484 14.9168 30 14.0919Z" fill="white"/>
+</svg>
+</a>
+</div>
+</div>
+</footer>
+</div>
+<div class="modal fade" id="errorStatusModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-status" role="document">
+<div class="modal-content">
+<div class="modal-status-graph modal-status-graph-error">
+<svg xmlns="http://www.w3.org/2000/svg" width="85" height="86">
+<defs>
+<filter id="errora" width="85" height="86" x="0" y="0" filterUnits="userSpaceAVWse">
+<feoffset dy="6" in="SourceAlpha"/>
+<fegaussianblur result="blurOut" stdDeviation="3.464"/>
+<feflood flood-color="#C80A40" result="floodOut"/>
+<fecomposite in="floodOut" in2="blurOut" operator="atop"/>
+<fecomponenttransfer>
+<fefunca slope=".6" type="linear"/>
+</fecomponenttransfer>
+<femerge>
+<femergenode/>
+<femergenode in="SourceGraphic"/>
+</femerge>
+</filter>
+<filter id="errorb">
+<feoffset dy="-4" in="SourceAlpha"/>
+<fegaussianblur result="blurOut" stdDeviation="2.828"/>
+<feflood flood-color="#FF0D51" result="floodOut"/>
+<fecomposite in="floodOut" in2="blurOut" operator="out" result="compOut"/>
+<fecomposite in="compOut" in2="SourceAlpha" operator="in"/>
+<fecomponenttransfer>
+<fefunca slope=".5" type="linear"/>
+</fecomponenttransfer>
+<feblend in2="SourceGraphic"/>
+</filter>
+</defs>
+<path fill="#FFF" fill-rule="evenodd" d="M54.738 36.969L70.342 52.58c3.521 3.524 3.521 9.237 0 12.76a9.015 9.015 0 0 1-12.754 0L41.984 49.729 26.381 65.34a9.015 9.015 0 0 1-12.754 0c-3.522-3.523-3.522-9.236 0-12.76l15.604-15.611-15.572-15.58c-3.522-3.524-3.522-9.237 0-12.76a9.013 9.013 0 0 1 12.753 0l15.572 15.58 15.572-15.58a9.015 9.015 0 0 1 12.754 0c3.522 3.523 3.522 9.236 0 12.76l-15.572 15.58z" filter="url(#errorb)"/>
+</svg>
+</div>
+<button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+<path fill-rule="evenodd" d="M10.435 8.983l7.261 7.261a1.027 1.027 0 1 1-1.452 1.452l-7.261-7.261-7.262 7.262a1.025 1.025 0 1 1-1.449-1.45l7.262-7.261L.273 1.725A1.027 1.027 0 1 1 1.725.273l7.261 7.261 7.23-7.231a1.025 1.025 0 1 1 1.449 1.45l-7.23 7.23z"/>
+</svg>
+</button>
+<div class="modal-body modal-status-body">
+<h2 class="modal-status-title"></h2>
+<p class="modal-status-text" style="word-break: break-all;"></p>
+<div class="modal-status-button-wrapper">
+<button class="btn-line" type="button" data-dismiss="modal">
+<span class="btn-line-text">Ok</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div><div class="modal fade" id="warningStatusModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-status" role="document">
+<div class="modal-content">
+<div class="modal-status-graph modal-status-graph-warning">
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="85">
+<defs>
+<filter id="warninga" width="43" height="85" x="0" y="0" filterUnits="userSpaceAVWe">
+<feoffset dy="6" in="SourceAlpha"/>
+<fegaussianblur result="blurOut" stdDeviation="3.464"/>
+<feflood flood-color="#C16502" result="floodOut"/>
+<fecomposite in="floodOut" in2="blurOut" operator="atop"/>
+<fecomponenttransfer>
+<fefunca slope=".6" type="linear"/>
+</fecomponenttransfer>
+<femerge>
+<femergenode/>
+<femergenode in="SourceGraphic"/>
+</femerge>
+</filter>
+<filter id="warningb">
+<feoffset dy="-4" in="SourceAlpha"/>
+<fegaussianblur result="blurOut" stdDeviation="2.828"/>
+<feflood flood-color="#FF8502" result="floodOut"/>
+<fecomposite in="floodOut" in2="blurOut" operator="out" result="compOut"/>
+<fecomposite in="compOut" in2="SourceAlpha" operator="in"/>
+<fecomponenttransfer>
+<fefunca slope=".5" type="linear"/>
+</fecomponenttransfer>
+<feblend in2="SourceGraphic"/>
+</filter>
+</defs>
+<path fill="#FFF" fill-rule="evenodd" d="M30.23 18.848L26 40h-.1a5.003 5.003 0 0 1-9.8 0H16l-4.23-21.152A9.958 9.958 0 0 1 11 15c0-5.523 4.477-10 10-10s10 4.477 10 10a9.958 9.958 0 0 1-.77 3.848zM21 49a9 9 0 0 1 9 9 9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9z" filter="url(#warningb)"/>
+</svg>
+</div>
+<button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+<path fill-rule="evenodd" d="M10.435 8.983l7.261 7.261a1.027 1.027 0 1 1-1.452 1.452l-7.261-7.261-7.262 7.262a1.025 1.025 0 1 1-1.449-1.45l7.262-7.261L.273 1.725A1.027 1.027 0 1 1 1.725.273l7.261 7.261 7.23-7.231a1.025 1.025 0 1 1 1.449 1.45l-7.23 7.23z"/>
+</svg>
+</button>
+<div class="modal-body modal-status-body">
+<h2 class="modal-status-title"></h2>
+<p class="modal-status-text" style></p>
+<div class="modal-status-button-wrapper">
+<button class="btn-line" type="button" data-dismiss="modal">
+<span class="btn-line-text">Ok</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div><div class="modal fade" id="successStatusModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-status" role="document">
+<div class="modal-content">
+<div class="modal-status-graph modal-status-graph-success">
+<svg xmlns="http://www.w3.org/2000/svg" width="99" height="80">
+<defs>
+<filter id="successa" width="99" height="80" x="0" y="0" filterUnits="userSpaceOnUse">
+<feoffset dy="6" in="SourceAlpha"/>
+<fegaussianblur result="blurOut" stdDeviation="3.464"/>
+<feflood flood-color="#0E796B" result="floodOut"/>
+<fecomposite in="floodOut" in2="blurOut" operator="atop"/>
+<fecomponenttransfer>
+<fefunca slope=".6" type="linear"/>
+</fecomponenttransfer>
+<femerge>
+<femergenode/>
+<femergenode in="SourceGraphic"/>
+</femerge>
+</filter>
+<filter id="successb">
+<feoffset dy="-4" in="SourceAlpha"/>
+<fegaussianblur result="blurOut" stdDeviation="2.828"/>
+<feflood flood-color="#15BBA6" result="floodOut"/>
+<fecomposite in="floodOut" in2="blurOut" operator="out" result="compOut"/>
+<fecomposite in="compOut" in2="SourceAlpha" operator="in"/>
+<fecomponenttransfer>
+<fefunca slope=".5" type="linear"/>
+</fecomponenttransfer>
+<feblend in2="SourceGraphic"/>
+</filter>
+</defs>
+<path fill="#FFF" fill-rule="evenodd" d="M84.31 21.389L46.381 59.34a8.993 8.993 0 0 1-6.399 2.642 8.998 8.998 0 0 1-6.402-2.642L13.629 39.389a9.022 9.022 0 0 1 0-12.76 9.022 9.022 0 0 1 12.76 0l13.593 13.593L71.557 8.629a9.013 9.013 0 0 1 12.753 0c3.522 3.523 3.522 9.236 0 12.76z" filter="url(#successb)"/>
+</svg>
+</div>
+<button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+<path fill-rule="evenodd" d="M10.435 8.983l7.261 7.261a1.027 1.027 0 1 1-1.452 1.452l-7.261-7.261-7.262 7.262a1.025 1.025 0 1 1-1.449-1.45l7.262-7.261L.273 1.725A1.027 1.027 0 1 1 1.725.273l7.261 7.261 7.23-7.231a1.025 1.025 0 1 1 1.449 1.45l-7.23 7.23z"/>
+</svg>
+</button>
+<div class="modal-body modal-status-body">
+<h2 class="modal-status-title"></h2>
+<p class="modal-status-text" style></p>
+<div class="modal-status-button-wrapper">
+<button class="btn-line" type="button" data-dismiss="modal">
+<span class="btn-line-text">Ok</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div><div class="modal fade" id="questionStatusModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-status" role="document">
+<div class="modal-content">
+<div class="modal-status-graph modal-status-graph-question">
+<svg xmlns="http://www.w3.org/2000/svg" width="62" height="85">
+<defs>
+<filter id="questiona" width="62" height="85" x="0" y="0" filterUnits="userSpaceOnUse">
+<feoffset dy="6" in="SourceAlpha"/>
+<fegaussianblur result="blurOut" stdDeviation="3.464"/>
+<feflood flood-color="#2674AF" result="floodOut"/>
+<fecomposite in="floodOut" in2="blurOut" operator="atop"/>
+<fecomponenttransfer>
+<fefunca slope=".6" type="linear"/>
+</fecomponenttransfer>
+<femerge>
+<femergenode/>
+<femergenode in="SourceGraphic"/>
+</femerge>
+</filter>
+<filter id="questionb">
+<feoffset dy="-4" in="SourceAlpha"/>
+<fegaussianblur result="blurOut" stdDeviation="2.828"/>
+<feflood flood-color="#329AE9" result="floodOut"/>
+<fecomposite in="floodOut" in2="blurOut" operator="out" result="compOut"/>
+<fecomposite in="compOut" in2="SourceAlpha" operator="in"/>
+<fecomponenttransfer>
+<fefunca slope=".5" type="linear"/>
+</fecomponenttransfer>
+<feblend in2="SourceGraphic"/>
+</filter>
+</defs>
+<path fill="#FFF" fill-rule="evenodd" d="M30.385 46.419c1.149 0 2.146-.344 2.995-1.033.847-.689 1.381-1.664 1.6-2.928.273-1.205.889-2.368 1.846-3.487.957-1.119 2.339-2.454 4.144-4.004 1.915-1.779 3.474-3.3 4.678-4.563 1.203-1.262 2.228-2.784 3.077-4.564.848-1.779 1.272-3.731 1.272-5.855 0-2.87-.794-5.438-2.38-7.707-1.587-2.267-3.774-4.046-6.565-5.338-2.79-1.292-5.963-1.937-9.518-1.937-3.174 0-6.333.531-9.478 1.593-3.147 1.062-5.95 2.54-8.412 4.434-.931.747-1.6 1.522-2.01 2.325-.41.804-.616 1.808-.616 3.013 0 1.78.479 3.287 1.436 4.521.957 1.235 2.12 1.851 3.488 1.851 1.149 0 2.653-.545 4.513-1.636l1.97-1.033c1.531-.918 2.913-1.621 4.144-2.11a10.075 10.075 0 0 1 3.734-.732c1.53 0 2.734.374 3.61 1.12.875.747 1.313 1.752 1.313 3.014 0 1.263-.315 2.41-.943 3.444-.63 1.033-1.574 2.268-2.832 3.702-1.751 1.895-3.118 3.746-4.103 5.554-.984 1.808-1.477 4.062-1.477 6.759 0 1.78.397 3.158 1.19 4.133.793.977 1.9 1.464 3.324 1.464zm.164 20.579c2.297 0 4.198-.803 5.703-2.411 1.504-1.606 2.257-3.587 2.257-5.941 0-2.353-.753-4.334-2.257-5.941-1.505-1.607-3.406-2.411-5.703-2.411-2.244 0-4.117.804-5.621 2.411-1.506 1.607-2.257 3.588-2.257 5.941 0 2.354.751 4.335 2.257 5.941 1.504 1.608 3.377 2.411 5.621 2.411z" filter="url(#questionb)"/>
+</svg>
+</div>
+<button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+<path fill-rule="evenodd" d="M10.435 8.983l7.261 7.261a1.027 1.027 0 1 1-1.452 1.452l-7.261-7.261-7.262 7.262a1.025 1.025 0 1 1-1.449-1.45l7.262-7.261L.273 1.725A1.027 1.027 0 1 1 1.725.273l7.261 7.261 7.23-7.231a1.025 1.025 0 1 1 1.449 1.45l-7.23 7.23z"/>
+</svg>
+</button>
+<div class="modal-body modal-status-body">
+<h2 class="modal-status-title"></h2>
+<p class="modal-status-text" style></p>
+<div class="modal-status-button-wrapper">
+<button class="btn-line except" type="button">
+<span class="btn-line-text">No</span>
+</button>
+<button class="btn-line accept" type="button">
+<span class="btn-line-text">Yes</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script defer data-cfasync="false" src="js/chain-8e7381611f8b52ccd84f8b7794fc2ae0.js"></script>
+<script defer data-cfasync="false" src="js/chart-loader-cf456b03ce811c97c20fb9ad40d7e1e9.js"></script>
+<script defer data-cfasync="false" src="js/token-transfers-toggle-ed90c92bc5f27e81bb64def1db83bee4.js"></script>
+<script defer data-cfasync="false">
+      function applyDarkMode() {
+        if (localStorage.getItem("current-color-mode") === "dark") {
+          document.body.className += " " + "dark-theme-applied";
+          document.body.style.backgroundColor = "#152037";
+        }
+      }
+      window.onload = applyDarkMode()
+    </script>
+<script defer data-cfasync="false">
+      if (localStorage.getItem("current-color-mode") === "dark") {
+        document.getElementById("top-navbar").style.backgroundColor = "#283245";
+        document.getElementById("navbar-logo").style.filter = "// filter: brightness(0) invert(1);";
+        let modeChanger = document.getElementById("dark-mode-changer");
+        modeChanger.className += " " + "dark-mode-changer--dark";
+      }
+    </script>
+<script defer data-cfasync="false">
+      if (localStorage.getItem("current-color-mode") === "dark") {
+        const search = document.getElementById("main-search-autocomplete")
+        const searchMobile = document.getElementById("main-search-autocomplete-mobile")
+            if (search && search.style) {
+          search.style.backgroundColor = "#22293a";
+              search.style.borderColor = "#22293a";
+        }
+        if (searchMobile && searchMobile.style) {
+          searchMobile.style.backgroundColor = "#22293a";
+          searchMobile.style.borderColor = "#22293a";
+        }
+      }
+    </script>
+<script defer src="js/autocomplete-ab2c626846064969e2d3743d8a6f9e84.js"></script>
+
+
+</body></html>
